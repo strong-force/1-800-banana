@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Something With The Word Safe In It</title>
+<title>Verification</title>
 <link rel="stylesheet" type="text/css" href="uwu.css">
 </head>
 
@@ -11,15 +11,28 @@
   <a href="LogIn.html">Log In</a>
   <a href="CrisisPlan.html">Crisis Plan</a>
   <a href="Information.html">Information</a>
-  <a href="Resources.html">Resources</a>
-  <a href="MyInfo.html">My Info</a>
   <a href="Verification.html">Verification</a>
 </div>
 
 <body>
 
-<h1>Something With The Word Safe In It Homepage</h1>
-<p>Here you can find info on being safe and not being finessed by a creep</p>
+<h1>Verification</h1>
+<p>Here you would enter someone's username and it would tell you whether or not they are a verified student</p>
+
+<form>
+	Input Username:<br>
+	<input type="text" id="targetuser"> <br> 
+	<input type="button" onclick="verify()" value="Verify">
+</form>
+
+<script>
+function verify() {
+	var username = document.getElementById("targetuser").value;
+	if(!username == "") {
+		alert(username + " is a valid user although i havem't implemented this yet");
+	}
+}
+</script>
 
 </body>
 </html> 

@@ -1,4 +1,15 @@
- /* The sidebar menu */
+body {
+	background: #708193;
+	padding-left: 1.5%;
+	width: calc(100% - 240px);
+}
+
+#question {
+	width: 90%;
+}
+
+
+/* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 200px; /* Set the width of the sidebar */
@@ -6,7 +17,7 @@
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: calc(100% - 200px);
-  background-color: #505050; 
+  background-color: #4f5b68; 
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }

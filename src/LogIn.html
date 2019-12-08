@@ -11,20 +11,55 @@
   <a href="LogIn.html">Log In</a>
   <a href="CrisisPlan.html">Crisis Plan</a>
   <a href="Information.html">Information</a>
-  <a href="Resources.html">Resources</a>
-  <a href="MyInfo.html">My Info</a>
   <a href="Verification.html">Verification</a>
 </div>
 
-<body>
+<body onload="checkLoggedIn()">
 
-<h1>Wowie this is where you log in</h1>
-<form>
-  Username/email:<br>
-  <input type="text" name="user"><br>
+<h1>Login Page</h1>
+<form id="loginform">
+  Username:<br>
+  <input type="text" id="user"><br>
+  Email:<br>
+  <input type="email" id="user"><br>
   Password:<br>
-  <input type="text" name="pass">
-</form> 
+  <input type="password" id="pass" > <br>
+  <br>
+  <input type="button" onclick="logIn()" value="Submit">
+</form>
+
+<p id="hiddentext"></p>
+
+<input id="logout" type="button" onClick="logOut()" value = "Log Out">
+
+<script>
+function logIn() {
+  var username = document.getElementById("user").value;
+  var password = document.getElementById("pass").value;
+  document.getElementById("hiddentext").textContent = "You are currently logged in as: " + username + ". No need to log in again!";
+  document.cookie = "username=" + username;
+  document.cookie = "password=" + password; 
+  document.getElementById("loginform").style.display = "none";
+  alert("Successfully logged in as " + username + "!");
+  document.getElementById("logout").style.display = "visible";
+}
+
+function checkLoggedIn() {
+	var cookie = document.cookie;
+	if(cookie != ""){
+	var perams = cookie.split(";");
+	document.getElementById("loginform").style.display = "none";
+	document.getElementById("hiddentext").textContent = "You are currently logged in as: "  + perams[0].substring(9) + ". No need to log in again!";
+  	document.getElementById("logout").style.display = "visible";
+	} else {
+	document.getElementById("logout").style.display = "hidden";
+	}
+}
+
+function logOut(){
+	document.cookie = "username=\"doesnntmatter\"; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+}
+</script>
 
 </body>
 </html> 
