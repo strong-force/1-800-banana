@@ -39,7 +39,7 @@ function logIn() {
   document.getElementById("hiddentext").textContent = "You are currently logged in as: " + username + ". No need to log in again!";
   document.cookie = "username=" + username;
   document.cookie = "password=" + password; 
-  document.getElementById("loginform").style.visibility = "hidden";
+  document.getElementById("loginform").style.display = "none";
   document.getElementById("logout").style.visibility = "visible";
   alert("Successfully logged in as " + username + "!");
 }
