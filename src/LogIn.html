@@ -30,7 +30,7 @@
 
 <p id="hiddentext"></p>
 
-<input id="logout" type="button" onClick="logOut()" value = "Log Out">
+<input id="logout" type="button" onClick="logOut()" value="Log Out">
 
 <script>
 function logIn() {
@@ -39,20 +39,20 @@ function logIn() {
   document.getElementById("hiddentext").textContent = "You are currently logged in as: " + username + ". No need to log in again!";
   document.cookie = "username=" + username;
   document.cookie = "password=" + password; 
-  document.getElementById("loginform").style.display = "none";
+  document.getElementById("loginform").style.visibility = "hidden";
+  document.getElementById("logout").style.visibility = "visible";
   alert("Successfully logged in as " + username + "!");
-  document.getElementById("logout").style.display = "visible";
 }
 
 function checkLoggedIn() {
 	var cookie = document.cookie;
 	if(cookie != ""){
 	var perams = cookie.split(";");
-	document.getElementById("loginform").style.display = "none";
+	document.getElementById("loginform").style.visibility = "hidden";
 	document.getElementById("hiddentext").textContent = "You are currently logged in as: "  + perams[0].substring(9) + ". No need to log in again!";
-  	document.getElementById("logout").style.display = "visible";
+  	document.getElementById("logout").style.visibility = "visible";
 	} else {
-	document.getElementById("logout").style.display = "hidden";
+	document.getElementById("logout").style.visibility = "hidden";
 	}
 }
 
