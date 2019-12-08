@@ -57,8 +57,9 @@ function checkLoggedIn() {
 }
 
 function logOut(){
-	document.cookie = "username=\"doesnntmatter\"; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-}
+	document.cookie = "username=\"doesntmatter\"; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	document.cookie = "password=\"doesntmatter\"; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	location.reload(); }
 </script>
 
 </body>

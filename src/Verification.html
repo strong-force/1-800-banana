@@ -28,8 +28,12 @@
 <script>
 function verify() {
 	var username = document.getElementById("targetuser").value;
-	if(!username == "") {
-		alert(username + " is a valid user although i havem't implemented this yet");
+	if(username != "") {
+		if(username == "punkrockroyalty" || username == "mafu" || username == "verifieduser") {
+			alert(username + " is a valid user");
+		} else {
+			alert(username + " is not a registered user");
+		}
 	}
 }
 </script>
